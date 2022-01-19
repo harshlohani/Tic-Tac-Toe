@@ -27,18 +27,24 @@ def printBoard(board):
 
 # Now we'll write the main function which has all the gameplay functionality.
 
-player_dict = {'X': 'x_name' , 'O':'o_name'} 
-player_name = player_dict.values()
+x_name1=file1.x_name
+o_name2=file1.o_name
+player_dict = {"X": x_name1,"O": o_name2} 
+player_X = player_dict.get("X")
+player_O = player_dict.get("O")
+
 
 def game():
  
-    turn = 'X'
+    turn = 'player_X'
     count = 0
-
 
     for i in range(10):
         printBoard(theBoard)
-        print("It's your turn," + player_name + ".Move to which place?")
+        # TODO: Harsh- this is to get each player in alternate
+        # player_dict.values() is a dictionary, which you are trying to concatenate with string data type, which is not allowed
+        whichPlayer = player_dict.get("X") if (i%2 == 0) else player_dict.get('O')
+        print("It's your turn," + whichPlayer + ".Move to which place?")
 
         move = input()        
 

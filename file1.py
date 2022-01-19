@@ -10,6 +10,7 @@ val2= input("'O' Enter your name: ")
 o_name=val2
 print(val2)
 
+#print("name is",o_name)
 
 
 
